@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VibiFy - Music Streaming</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash-screen">
+    <img src="assets/logo.png" alt="VibiFy">
+    <h1>VibiFy</h1>
+</div>
+
+<!-- APP -->
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <img src="assets/logo.png" alt="logo">
+
+            <div>
+                <h2>VibiFy</h2>
+                <span>Music Streaming</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                Favorites
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-music"></i>
+                Playlist
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock"></i>
+                Recent
+            </a>
+
+        </nav>
+
+        <div class="upload-box">
+
+            <h3>Tambah Lagu</h3>
+
+            <input
+                type="text"
+                id="songTitle"
+                placeholder="Judul Lagu">
+
+            <input
+                type="text"
+                id="songArtist"
+                placeholder="Nama Artis">
+
+            <label class="upload-btn">
+
+                <i class="fa-solid fa-file-audio"></i>
+
+                Upload Lagu
+
+                <input
+                    type="file"
+                    id="audioFile"
+                    accept="audio/*">
+
+            </label>
+
+            <label class="upload-btn">
+
+                <i class="fa-solid fa-image"></i>
+
+                Upload Cover
+
+                <input
+                    type="file"
+                    id="coverFile"
+                    accept="image/*">
+
+            </label>
+
+            <input
+                type="text"
+                id="coverUrl"
+                placeholder="Atau URL Cover">
+
+            <button id="addSongBtn">
+                Tambah Ke Playlist
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+
+            <div class="search">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari lagu atau artis">
+
+            </div>
+
+            <div class="profile">
+
+                <img src="assets/logo.png">
+
+            </div>
+
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <span>Now Playing</span>
+
+                <h1 id="currentTitle">
+                    Belum Ada Lagu
+                </h1>
+
+                <p id="currentArtist">
+                    Tambahkan lagu terlebih dahulu
+                </p>
+
+            </div>
+
+            <div class="hero-right">
+
+                <img
+                    id="currentCover"
+                    src="assets/logo.png">
+
+            </div>
+
+        </section>
+
+        <!-- PLAYLIST -->
+        <section class="playlist-section">
+
+            <div class="section-title">
+
+                <h2>VibiFy Playlist</h2>
+
+                <span id="songCount">
+                    0 Lagu
+                </span>
+
+            </div>
+
+            <div
+                id="playlist"
+                class="playlist-grid">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- PLAYER -->
+<footer class="player">
+
+    <div class="player-song">
+
+        <img
+            id="playerCover"
+            src="assets/logo.png">
+
+        <div>
+
+            <h4 id="playerTitle">
+                Tidak Ada Lagu
+            </h4>
+
+            <p id="playerArtist">
+                -
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="player-center">
+
+        <div class="controls">
+
+            <button id="prevBtn">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+
+            <button id="playBtn">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <button id="nextBtn">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+
+        </div>
+
+        <div class="progress">
+
+            <span id="currentTime">
+                0:00
+            </span>
+
+            <input
+                type="range"
+                id="progressBar"
+                min="0"
+                max="100"
+                value="0">
+
+            <span id="duration">
+                0:00
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
